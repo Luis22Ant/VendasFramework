@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+using Vendas.DAO;
 
 namespace Vendas.View
 {
@@ -36,7 +34,7 @@ namespace Vendas.View
 
         public void CarregarEntregas()
         {
-            string query = "SELECT * FROM ENTREGA";
+            string query = "SELECT * FROM ENTREGA ORDER BY PREVISAO_ENTREGA ASC";
             DataTable dtCarregaDados = new DataTable();
             try
             {
@@ -125,7 +123,31 @@ namespace Vendas.View
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
+            Models.Entrega entrega = new Models.Entrega();
 
+            entrega.StatusEntrega = ddlStatus.SelectedValue;
+            entrega.CodCliente = ddlCliente.SelectedValue;
+            entrega.CodCaminhao = ddlCaminhao.SelectedValue;
+            entrega.Telefone = txtTelefone.Text;
+            entrega.FormaPagamento = ddlFormPag.SelectedValue;
+            entrega.NumParcial = txtNumParcial.Text;
+            entrega.NumPedido = txtNumPedido.Text;
+            entrega.Endereco = txtEndereco.Text;
+            entrega.ValorEntrega = txtValorEntrega.Text;
+            entrega.Observacao = txtObservacao.Text;
+            entrega.PrevisaoEntrega = txtDataPrevisao.Text;
+
+            if (EntregaDAO.CadastrarEntrega(entrega))
+            {
+                MultiViewEntrega.ActiveViewIndex = 0;
+                NavBarSection.Attributes.Add("style", "display:block");
+                FilterSection.Attributes.Add("style", "display:block");
+                CarregarEntregas();
+            }
+            else
+            {
+
+            }
         }
 
         protected void btnVoltar_Click(object sender, EventArgs e)

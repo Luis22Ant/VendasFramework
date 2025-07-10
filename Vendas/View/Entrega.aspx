@@ -206,7 +206,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <asp:Label runat="server" AssociatedControlID="txtTelefone" Text="Telefone" CssClass="form-label" />
-                                        <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control" />
+                                        <asp:TextBox ID="txtTelefone" runat="server" TextMode="Phone" CssClass="form-control" />
                                     </div>
 
                                     <div class="col-md-6">
