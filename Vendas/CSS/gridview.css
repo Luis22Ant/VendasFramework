@@ -1,0 +1,344 @@
+﻿body {
+}
+
+
+.divGdv {
+    height: 60vh;
+    margin-top: 0vh;
+    margin-right: 2vh;
+    margin-bottom: 1vh;
+    padding-bottom: 1vh;
+    margin-left: 2vh;
+    overflow: auto;
+}
+
+    .divGdv::-webkit-scrollbar {
+        background-color: black;
+        border-radius: 10px;
+        border: 4px solid white;
+    }
+
+    .divGdv::-webkit-scrollbar-track {
+        background: white;
+    }
+
+    .divGdv::-webkit-scrollbar-thumb {
+        background-color: black;
+        border-radius: 10px;
+        border: 4px solid white;
+    }
+
+.divGdvScrollbar {
+    height: 60vh;
+    margin-left: 1.5rem !important;
+    max-width: 60rem !important;
+    min-width: 60rem;
+    overflow: auto;
+}
+
+.pScrollbar {
+    border-bottom: 17px solid white;
+}
+
+.divGdvScrollbar::-webkit-scrollbar {
+    display: none
+}
+
+/*.divGdvScrollbar::-webkit-scrollbar-track {
+
+}
+
+.divGdvScrollbar::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    border: 0px;
+}
+*/
+.filtros {
+    padding-right: 1vh;
+    display: flex;
+    align-items: center;
+}
+
+.filtros-formResp {
+    padding-right: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtros-formAuditoria {
+    padding-right: 1vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-position-filtros {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2vh;
+}
+
+.div-filtros {
+    display: flex;
+    align-items: center;
+}
+
+.div-filtros-formResp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-filtro {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.caixa-filtro {
+    width: 5vw;
+}
+
+.caixa-filtro-formResp {
+    width: 82%;
+}
+
+
+.caixa-filtro-grande {
+    width: 10vw;
+}
+
+.caixa-filtro-grande-formResp {
+    width: 14vw;
+    justify-content: center;
+}
+
+/*#region ----------------------------------------------------------------------------- LAYOUT GRID ----------------------------------------------------------------------------- */
+.gridview-layout {
+    margin-bottom: 0;
+}
+
+.cabecalho-grid {
+    font-size: 11px !important;
+    background-color: #003e6e;
+    color: white;
+    border: 1px solid #003e6e;
+    position: sticky !important;
+    top: 0;
+}
+
+    .cabecalho-grid > th {
+        padding: 4px !important;
+    }
+
+        .cabecalho-grid > th > a {
+            color: white !important;
+        }
+
+.linha-grid {
+    font-size: 10.7px !important;
+}
+
+    .linha-grid > td {
+        padding: 4px !important;
+    }
+
+.linha-grid-alternada {
+    background-color: var(--corBackground);
+}
+
+.mar-grid {
+    margin-top: 15px !important;
+}
+
+.rodape-grid {
+    font-size: 11px !important;
+    background-color: var(--corIntranet);
+    color: white !important;
+    font-weight: bold;
+    border: 1px solid var(--corIntranet);
+}
+
+    .rodape-grid:hover {
+        background-color: var(--corIntranet) !important;
+        opacity: 0.8;
+    }
+
+    .rodape-grid > td {
+        padding: 4px !important;
+    }
+
+        .rodape-grid > td:hover {
+            background-color: var(--corIntranet) !important;
+            opacity: 0.8;
+        }
+
+.caixa-gridview > div {
+    /*overflow-x: overlay;*/
+}
+
+/*#endregion */
+
+/*#region ----------------------------------------------------------------------------- ICONE GRID ----------------------------------------------------------------------------- */
+
+.grid-icone {
+    font-size: 1.6rem;
+}
+
+.grid-icone-default {
+    color: #1b5d19;
+}
+
+.grid-icone-light {
+    color: white;
+}
+
+.grid-icone-dark {
+    color: black;
+}
+
+.grid-icone-primary {
+    color: #337ab7;
+}
+
+.grid-icone-success {
+    color: #5cb85c;
+}
+
+.grid-icone-danger {
+    color: #d9534f;
+}
+
+.grid-icone-warning {
+    color: #f0ad4e;
+}
+
+/*#endregion */
+
+/*#region ----------------------------------------------------------------------------- PAGINAÇÃO GRID ----------------------------------------------------------------------------- */
+
+.grid-pager a, .grid-pager span {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+    .grid-pager a:hover {
+        opacity: 0.8;
+    }
+
+.grid-pager a {
+    background-color: white;
+    border: 1px solid gray;
+}
+
+.grid-pager span {
+    background-color: var(--corBackground);
+    color: black;
+    border: 1px solid var(--corIntranet);
+}
+
+.teste {
+    height: 370px;
+}
+
+    .teste > div {
+        height: 370px;
+    }
+
+
+
+.GridPager a, .GridPager span {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-bottom: 0;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+    .GridPager a:hover {
+        opacity: 0.8;
+    }
+
+.GridPager a {
+    background-color: #f5f5f5;
+    /*color: #969696;*/
+    border: 1px solid #969696;
+}
+
+.GridPager span {
+    background-color: #A1DCF2;
+    color: #000;
+    border: 1px solid #3AC0F2;
+}
+/*#endregion */
+
+#DivBotoesFiltros {
+    height: 12vh;
+}
+
+#DivBotoesFiltrosFormResp {
+    height: 6vh;
+}
+
+.input-infos {
+    font-family: inherit;
+    padding: 6px 12px;
+    color: #000;
+    font-size: 14px;
+}
+
+#GdvFormRespostas .GridPager {
+    visibility: hidden;
+    border-left: hidden;
+}
+
+#GdvInfosPrinc .GridPager {
+    border-right: hidden;
+}
+
+.alinharIcone {
+    text-align: center;
+    font-size: 13px;
+}
+
+#GdvAcesso th {
+    width: 4vw;
+    font-size: 13px;
+}
+
+#GdvAcesso td {
+    width: 4vw;
+    font-size: 13px;
+}
