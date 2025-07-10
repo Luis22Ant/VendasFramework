@@ -31,7 +31,7 @@
                 <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True">
                 </asp:ScriptManager>
 
-                <section>
+                <section id="NavBarSection" runat="server">
 
 
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -65,7 +65,7 @@
                     </nav>
 
                 </section>
-                <section>
+                <section id="FilterSection" runat="server">
                     <div class="container mt-3 mb-3">
                         <div class="row g-3">
                             <div class="col-md-3">
@@ -154,6 +154,81 @@
                                         FirstPageText="<i class='GridPager fas fa-angle-double-left'></i>"
                                         LastPageText="<i class='GridPager fas fa-angle-double-right'></i>" />
                                 </asp:GridView>
+                            </div>
+                        </asp:View>
+                        <asp:View runat="server">
+                            <div class="container mt-5 mb-5">
+                                <h2>Cadastro de Entrega</h2>
+                                <div class="row g-3">
+
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="txtNumPedido" Text="Número do pedido" CssClass="form-label" />
+                                        <asp:TextBox ID="txtNumPedido" runat="server" CssClass="form-control" />
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="txtValorEntrega" Text="Valor da entrega" CssClass="form-label" />
+                                        <asp:TextBox ID="txtValorEntrega" runat="server" CssClass="form-control" />
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="txtDataPrevisao" TextMode="Date" Text="Previsão de entrega" CssClass="form-label" />
+                                        <asp:TextBox ID="txtDataPrevisao" runat="server" TextMode="Date" CssClass="form-control" />
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="ddlCliente" Text="Cliente" CssClass="form-label" />
+                                        <asp:DropDownList runat="server" CssClass="form-control" ID="ddlCliente">
+                                            <asp:ListItem Value="123" Text="Teste"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="txtEndereco" Text="Endereço" CssClass="form-label" />
+                                        <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control" />
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="ddlFormPag" Text="Forma de pagamento" CssClass="form-label" />
+                                        <asp:DropDownList runat="server" CssClass="form-control" ID="ddlFormPag">
+                                            <asp:ListItem Value="123" Text="Teste"></asp:ListItem>
+                                            <asp:ListItem Value="1234" Text="Teste2"></asp:ListItem>
+                                            <asp:ListItem Value="1235" Text="Teste3"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="ddlStatus" Text="Status" CssClass="form-label" />
+                                        <asp:DropDownList runat="server" CssClass="form-control" ID="ddlStatus">
+                                            <asp:ListItem Value="123" Text="Teste"></asp:ListItem>
+                                            <asp:ListItem Value="1234" Text="Teste2"></asp:ListItem>
+                                            <asp:ListItem Value="1235" Text="Teste3"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="txtTelefone" Text="Telefone" CssClass="form-label" />
+                                        <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control" />
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="ddlCaminhao" Text="Caminhão" CssClass="form-label" />
+                                        <asp:DropDownList runat="server" CssClass="form-control" ID="ddlCaminhao">
+                                            <asp:ListItem Value="123" Text="Teste"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="txtNumParcial" Text="Num Parcial" CssClass="form-label" />
+                                        <asp:TextBox ID="txtNumParcial" runat="server" CssClass="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:Label runat="server" AssociatedControlID="txtObservacao" Text="Observação" CssClass="form-label" />
+                                        <asp:TextBox ID="txtObservacao" runat="server" CssClass="form-control" />
+                                    </div>
+
+                                    <div class="col-12 text-end mt-3">
+                                        <asp:Button ID="btnVoltar" runat="server" Text="Voltar" CssClass="btn btn-danger" OnClick="btnVoltar_Click" />
+                                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-success" OnClick="btnSalvar_Click" />
+                                    </div>
+                                </div>
                             </div>
                         </asp:View>
                     </asp:MultiView>

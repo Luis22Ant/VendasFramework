@@ -118,7 +118,21 @@ namespace Vendas.View
 
         protected void LbtnIncluir_Click(object sender, EventArgs e)
         {
+            MultiViewEntrega.ActiveViewIndex = 1;
+            NavBarSection.Attributes.Add("style", "display:none");
+            FilterSection.Attributes.Add("style", "display:none");
+        }
 
+        protected void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnVoltar_Click(object sender, EventArgs e)
+        {
+            MultiViewEntrega.ActiveViewIndex = 0;
+            NavBarSection.Attributes.Add("style", "display:block");
+            FilterSection.Attributes.Add("style", "display:block");
         }
     }
 }
