@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Vendas.ConfigProjeto.Tabelas;
 using Vendas.DAO;
 using Vendas.Models;
 
@@ -37,7 +38,7 @@ namespace Vendas.View
         public void CarregarEntregas()
         {
             string query = "";
-            string filtro = " WHERE 1=1 ";
+            string filtro = " WHERE 1=1";
 
 
             if (!string.IsNullOrEmpty(txtDataDe.Text) && !string.IsNullOrEmpty(txtDataAte.Text))
@@ -61,7 +62,7 @@ namespace Vendas.View
                 filtro += " AND NUM_PEDIDO = @num_pedido";
             }
 
-            query = "SELECT * FROM ENTREGA " + filtro + " ORDER BY PREVISAO_ENTREGA ASC";
+            query = "SELECT * FROM " + Tabelas_Projeto.ENTREGA + filtro + " ORDER BY PREVISAO_ENTREGA ASC";
             DataTable dtCarregaDados = new DataTable();
             try
             {
@@ -144,7 +145,7 @@ namespace Vendas.View
             hddId.Value = row.Cells[3].Text;
             entrega = EntregaDAO.BuscarEntrega(hddId.Value);
 
-            txtNumeroPedido.Text = entrega.NumPedido;
+            txtNumPedido.Text = entrega.NumPedido;
             txtNumParcial.Text = entrega.NumParcial;
             txtObservacao.Text = entrega.Observacao;
             txtEndereco.Text = entrega.Endereco;

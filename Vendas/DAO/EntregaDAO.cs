@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
+using Vendas.ConfigProjeto.Tabelas;
 using Vendas.Models;
 
 namespace Vendas.DAO
@@ -12,7 +13,7 @@ namespace Vendas.DAO
     {
         public static bool CadastrarEntrega(Entrega entrega)
         {
-            string query = "INSERT INTO ENTREGA (NUM_PEDIDO,VALOR_ENTREGA,PREVISAO_ENTREGA,COD_CLIENTE,FORMA_PAG,STATUS,COD_CAMINHAO,NUM_PARCIAL,OBSERVACAO,TELEFONE,ENDERECO)" +
+            string query = "INSERT INTO " + Tabelas_Projeto.ENTREGA + " (NUM_PEDIDO,VALOR_ENTREGA,PREVISAO_ENTREGA,COD_CLIENTE,FORMA_PAG,STATUS,COD_CAMINHAO,NUM_PARCIAL,OBSERVACAO,TELEFONE,ENDERECO)" +
                 "VALUES" +
                 "('" + entrega.NumPedido +
                 "','" + entrega.ValorEntrega +
@@ -50,7 +51,7 @@ namespace Vendas.DAO
 
         public static bool ExcluirEntrega(string id)
         {
-            string query = "DELETE FROM ENTREGAS WHERE ID = '" + id + "'";
+            string query = "DELETE FROM " + Tabelas_Projeto.ENTREGA + " WHERE ID = '" + id + "'";
 
             try
             {
@@ -75,7 +76,7 @@ namespace Vendas.DAO
         public static Entrega BuscarEntrega(string id)
         {
             Entrega Entrega = new Entrega();
-            string query = "SELECT NUM_PEDIDO,STATUS,FORMA_PAG,PREVISAO_ENTREGA,COD_CLIENTE,VALOR_ENTREGA,COD_CAMINHAO,NUM_PARCIAL,OBSERVACAO,TELEFONE,ENDERECO FROM ENTREGA WHERE ID = '" + id + "'";
+            string query = "SELECT NUM_PEDIDO,STATUS,FORMA_PAG,PREVISAO_ENTREGA,COD_CLIENTE,VALOR_ENTREGA,COD_CAMINHAO,NUM_PARCIAL,OBSERVACAO,TELEFONE,ENDERECO FROM " + Tabelas_Projeto.ENTREGA + " WHERE ID = '" + id + "'";
 
             try
             {
