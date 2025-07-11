@@ -18,6 +18,8 @@
     <script src="https://kit.fontawesome.com/ba7dac9af2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://kit.fontawesome.com/ba7dac9af2.css" crossorigin="anonymous" />
 
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../CSS/gridview.css" type="text/css" rel="stylesheet" />
     <link href="../Resources/bootstrap.min.css" rel="stylesheet" />
@@ -31,6 +33,8 @@
                 <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True">
                 </asp:ScriptManager>
 
+                <asp:HiddenField runat="server" ID="hddAcao" />
+                <asp:HiddenField runat="server" ID="hddId" />
                 <section id="NavBarSection" runat="server">
 
 
@@ -81,7 +85,7 @@
                             </div>
 
                             <div class="col-md-3">
-                                <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" CssClass="btn btn-primary mt-2" />
+                                <asp:Button ID="btnFiltrar" OnClick="btnFiltrar_Click" runat="server" Text="Filtrar" CssClass="btn btn-primary mt-2" />
                             </div>
 
                         </div>
@@ -122,15 +126,6 @@
                                                 <div class="caixa-icone">
                                                     <a id="btnEditar" runat="server" title="Editar" onserverclick="btnEditar_ServerClick">
                                                         <i class="rowTable fa-solid fa-pencil grid-icone grid-icone-dark"></i>
-                                                    </a>
-                                                </div>
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
-                                        <asp:TemplateField ItemStyle-Width="30px">
-                                            <ItemTemplate>
-                                                <div class="caixa-icone">
-                                                    <a id="btnCopiar" runat="server" title="Copiar" onserverclick="btnCopiar_ServerClick">
-                                                        <i class="rowTable fa-solid fa-copy grid-icone grid-icone-dark"></i>
                                                     </a>
                                                 </div>
                                             </ItemTemplate>
@@ -226,13 +221,14 @@
 
                                     <div class="col-12 text-end mt-3">
                                         <asp:Button ID="btnVoltar" runat="server" Text="Voltar" CssClass="btn btn-danger" OnClick="btnVoltar_Click" />
-                                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-success" OnClick="btnSalvar_Click" />
+                                        <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" CssClass="btn btn-success" OnClick="btnConfirmar_Click" />
                                     </div>
                                 </div>
                             </div>
                         </asp:View>
                     </asp:MultiView>
                 </section>
+
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>

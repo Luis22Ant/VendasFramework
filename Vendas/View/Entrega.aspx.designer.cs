@@ -42,6 +42,24 @@ namespace Vendas.View
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
+        /// Controle hddAcao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hddAcao;
+
+        /// <summary>
+        /// Controle hddId.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hddId;
+
+        /// <summary>
         /// Controle NavBarSection.
         /// </summary>
         /// <remarks>
@@ -231,12 +249,12 @@ namespace Vendas.View
         protected global::System.Web.UI.WebControls.Button btnVoltar;
 
         /// <summary>
-        /// Controle btnSalvar.
+        /// Controle btnConfirmar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvar;
+        protected global::System.Web.UI.WebControls.Button btnConfirmar;
     }
 }

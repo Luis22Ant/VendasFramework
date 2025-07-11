@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|solutionrelative:vendas\\view\\entrega.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|c:\\users\\galoc\\source\\repos\\luis22ant\\vendasframework\\vendas\\dao\\entregadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|solutionrelative:vendas\\dao\\entregadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\vendas\\view\\entrega.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|solutionrelative:vendas\\view\\entrega.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|c:\\users\\galoc\\source\\repos\\luis22ant\\vendasframework\\vendas\\models\\entrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\vendas\\dao\\entregadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|solutionrelative:vendas\\dao\\entregadao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\vendas\\models\\entrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{26A4E166-E25E-4DAA-9765-443F27CAF073}|Vendas\\Vendas.csproj|solutionrelative:vendas\\models\\entrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,19 +26,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Entrega.aspx",
-              "DocumentMoniker": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\View\\Entrega.aspx",
-              "RelativeDocumentMoniker": "Vendas\\View\\Entrega.aspx",
-              "ToolTip": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\View\\Entrega.aspx",
-              "RelativeToolTip": "Vendas\\View\\Entrega.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-07-10T16:54:18.949Z",
+              "DocumentIndex": 0,
+              "Title": "Entrega.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\View\\Entrega.aspx.cs",
+              "RelativeDocumentMoniker": "Vendas\\View\\Entrega.aspx.cs",
+              "ToolTip": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\View\\Entrega.aspx.cs",
+              "RelativeToolTip": "Vendas\\View\\Entrega.aspx.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAvwCUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T17:00:34.453Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -53,32 +53,30 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T17:36:43.234Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Entrega.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\View\\Entrega.aspx.cs",
-              "RelativeDocumentMoniker": "Vendas\\View\\Entrega.aspx.cs",
-              "ToolTip": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\View\\Entrega.aspx.cs",
-              "RelativeToolTip": "Vendas\\View\\Entrega.aspx.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAAAC8AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-10T17:00:34.453Z",
-              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Entrega.aspx",
+              "DocumentMoniker": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\View\\Entrega.aspx",
+              "RelativeDocumentMoniker": "Vendas\\View\\Entrega.aspx",
+              "ToolTip": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\View\\Entrega.aspx",
+              "RelativeToolTip": "Vendas\\View\\Entrega.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-10T16:54:18.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "EntregaDAO.cs",
               "DocumentMoniker": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\DAO\\EntregaDAO.cs",
               "RelativeDocumentMoniker": "Vendas\\DAO\\EntregaDAO.cs",
               "ToolTip": "C:\\Users\\galoc\\source\\repos\\Luis22Ant\\VendasFramework\\Vendas\\DAO\\EntregaDAO.cs",
               "RelativeToolTip": "Vendas\\DAO\\EntregaDAO.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAADgvy4AAAAIAAAA",
+              "ViewState": "AQIAAGAAAAAAAAAAAADgv3IAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-10T17:36:05.353Z",
               "EditorCaption": ""

@@ -2,8 +2,10 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 using Vendas.DAO;
+using Vendas.Models;
 
 namespace Vendas.View
 {
@@ -34,14 +36,44 @@ namespace Vendas.View
 
         public void CarregarEntregas()
         {
-            string query = "SELECT * FROM ENTREGA ORDER BY PREVISAO_ENTREGA ASC";
+            string query = "";
+            string filtro = " WHERE 1=1 ";
+
+
+            if (!string.IsNullOrEmpty(txtDataDe.Text) && !string.IsNullOrEmpty(txtDataAte.Text))
+            {
+                filtro += " AND PREVISAO_ENTREGA BETWEEN @dataDe AND @dataAte";
+
+            }
+
+            else if (!string.IsNullOrEmpty(txtDataDe.Text))
+            {
+                filtro += " AND PREVISAO_ENTREGA >= @dataDe";
+            }
+
+            else if (!string.IsNullOrEmpty(txtDataAte.Text))
+            {
+                filtro += " AND PREVISAO_ENTREGA <= @dataAte";
+            }
+
+            if (!string.IsNullOrEmpty(txtNumeroPedido.Text))
+            {
+                filtro += " AND NUM_PEDIDO = @num_pedido";
+            }
+
+            query = "SELECT * FROM ENTREGA " + filtro + " ORDER BY PREVISAO_ENTREGA ASC";
             DataTable dtCarregaDados = new DataTable();
             try
             {
                 using (SqlConnection connection = new SqlConnection(Data.Conexao.ConexaoBanco()))
+
                 {
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@dataDe", txtDataDe.Text);
+                        command.Parameters.AddWithValue("@dataAte", txtDataAte.Text);
+                        command.Parameters.AddWithValue("@num_pedido", txtNumeroPedido.Text);
+
                         connection.Open();
 
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -103,58 +135,108 @@ namespace Vendas.View
         {
 
         }
-
-        protected void btnCopiar_ServerClick(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnExcluir_ServerClick(object sender, EventArgs e)
         {
+            hddAcao.Value = "EXCLUIR";
+            Models.Entrega entrega = new Models.Entrega();
+            GridViewRow row = (GridViewRow)(sender as Control).Parent.Parent;
 
+            hddId.Value = row.Cells[3].Text;
+            entrega = EntregaDAO.BuscarEntrega(hddId.Value);
+
+            txtNumeroPedido.Text = entrega.NumPedido;
+            txtNumParcial.Text = entrega.NumParcial;
+            txtObservacao.Text = entrega.Observacao;
+            txtEndereco.Text = entrega.Endereco;
+            txtDataPrevisao.Text = entrega.PrevisaoEntrega;
+            txtValorEntrega.Text = entrega.ValorEntrega;
+            MultiViewEntrega.ActiveViewIndex = 1;
+            Hidden();
+        }
+
+        public void Hidden()
+        {
+            NavBarSection.Attributes.Add("style", "display:none");
+            FilterSection.Attributes.Add("style", "display:none");
+        }
+
+        public void View()
+        {
+            NavBarSection.Attributes.Add("style", "display:block");
+            FilterSection.Attributes.Add("style", "display:block");
         }
 
         protected void LbtnIncluir_Click(object sender, EventArgs e)
         {
             MultiViewEntrega.ActiveViewIndex = 1;
-            NavBarSection.Attributes.Add("style", "display:none");
-            FilterSection.Attributes.Add("style", "display:none");
+            hddAcao.Value = "INCLUIR";
+            Hidden();
         }
 
-        protected void btnSalvar_Click(object sender, EventArgs e)
-        {
-            Models.Entrega entrega = new Models.Entrega();
-
-            entrega.StatusEntrega = ddlStatus.SelectedValue;
-            entrega.CodCliente = ddlCliente.SelectedValue;
-            entrega.CodCaminhao = ddlCaminhao.SelectedValue;
-            entrega.Telefone = txtTelefone.Text;
-            entrega.FormaPagamento = ddlFormPag.SelectedValue;
-            entrega.NumParcial = txtNumParcial.Text;
-            entrega.NumPedido = txtNumPedido.Text;
-            entrega.Endereco = txtEndereco.Text;
-            entrega.ValorEntrega = txtValorEntrega.Text;
-            entrega.Observacao = txtObservacao.Text;
-            entrega.PrevisaoEntrega = txtDataPrevisao.Text;
-
-            if (EntregaDAO.CadastrarEntrega(entrega))
-            {
-                MultiViewEntrega.ActiveViewIndex = 0;
-                NavBarSection.Attributes.Add("style", "display:block");
-                FilterSection.Attributes.Add("style", "display:block");
-                CarregarEntregas();
-            }
-            else
-            {
-
-            }
-        }
 
         protected void btnVoltar_Click(object sender, EventArgs e)
         {
             MultiViewEntrega.ActiveViewIndex = 0;
-            NavBarSection.Attributes.Add("style", "display:block");
-            FilterSection.Attributes.Add("style", "display:block");
+            View();
+        }
+
+        protected void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+            if (hddAcao.Value.Equals("INCLUIR"))
+            {
+                Models.Entrega entrega = new Models.Entrega();
+
+                entrega.StatusEntrega = ddlStatus.SelectedValue;
+                entrega.CodCliente = ddlCliente.SelectedValue;
+                entrega.CodCaminhao = ddlCaminhao.SelectedValue;
+                entrega.Telefone = txtTelefone.Text;
+                entrega.FormaPagamento = ddlFormPag.SelectedValue;
+                entrega.NumParcial = txtNumParcial.Text;
+                entrega.NumPedido = txtNumPedido.Text;
+                entrega.Endereco = txtEndereco.Text;
+                entrega.ValorEntrega = txtValorEntrega.Text;
+                entrega.Observacao = txtObservacao.Text;
+                entrega.PrevisaoEntrega = txtDataPrevisao.Text;
+
+                if (EntregaDAO.CadastrarEntrega(entrega))
+                {
+                    MultiViewEntrega.ActiveViewIndex = 0;
+                    View();
+                    CarregarEntregas();
+                }
+                else
+                {
+
+                }
+            }
+            else if (hddAcao.Value.Equals("EXCLUIR"))
+            {
+                if (EntregaDAO.ExcluirEntrega(hddId.Value))
+                {
+                    MultiViewEntrega.ActiveViewIndex = 0;
+                    View();
+                    CarregarEntregas();
+                }
+                else
+                {
+
+                }
+            }
+
+        }
+
+        protected void btnConfirmarExcluir_Click(object sender, EventArgs e)
+        {
+            if (EntregaDAO.ExcluirEntrega(hddId.Value))
+            {
+
+            }
+        }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            CarregarEntregas();
         }
     }
 }

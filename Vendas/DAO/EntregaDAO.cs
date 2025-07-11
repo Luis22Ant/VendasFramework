@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Web;
 using Vendas.Models;
 
@@ -44,6 +45,73 @@ namespace Vendas.DAO
 
 
             return true;
+        }
+
+
+        public static bool ExcluirEntrega(string id)
+        {
+            string query = "DELETE FROM ENTREGAS WHERE ID = '" + id + "'";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Data.Conexao.ConexaoBanco()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            return true;
+        }
+
+
+        public static Entrega BuscarEntrega(string id)
+        {
+            Entrega Entrega = new Entrega();
+            string query = "SELECT NUM_PEDIDO,STATUS,FORMA_PAG,PREVISAO_ENTREGA,COD_CLIENTE,VALOR_ENTREGA,COD_CAMINHAO,NUM_PARCIAL,OBSERVACAO,TELEFONE,ENDERECO FROM ENTREGA WHERE ID = '" + id + "'";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Data.Conexao.ConexaoBanco()))
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                Entrega.NumPedido = reader["NUM_PEDIDO"].ToString();
+                                Entrega.StatusEntrega = reader["STATUS"].ToString();
+                                Entrega.FormaPagamento = reader["FORMA_PAG"].ToString();
+                                Entrega.PrevisaoEntrega = reader["PREVISAO_ENTREGA"].ToString();
+                                Entrega.ValorEntrega = reader["VALOR_ENTREGA"].ToString();
+                                Entrega.CodCaminhao = reader["COD_CAMINHAO"].ToString();
+                                Entrega.NumParcial = reader["NUM_PARCIAL"].ToString();
+                                Entrega.Observacao = reader["OBSERVACAO"].ToString();
+                                Entrega.Telefone = reader["TELEFONE"].ToString();
+                                Entrega.Endereco = reader["ENDERECO"].ToString();
+                                Entrega.CodCliente = reader["COD_CLIENTE"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+            }
+
+            return Entrega;
         }
     }
 }
